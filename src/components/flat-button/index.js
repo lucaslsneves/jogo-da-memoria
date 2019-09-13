@@ -8,7 +8,12 @@ const flatButton = (function(){
            
            $style.textContent = `
                 .flat-button-${module._id}{
-                    height:176px;    
+                    height:176px;
+                    box-sizing:border-box;
+                    display:inline-block;
+                    text-decoration:none;
+                    text-align:center;
+                    padding-top:60px;    
                     width:50%;
                     margin-right:-5px;
                     background-color:${active  ? "#f25a70": "#eae6da"};
@@ -33,7 +38,7 @@ const flatButton = (function(){
        
        
             return`
-            <button class="flat-button-${module._id}">${content}</button>
+            <a href="" class="flat-button-${module._id}">${content}</a>
         `;
         
     }
