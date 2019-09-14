@@ -24,11 +24,11 @@ const eyeCollabCode = (function(){
     module.handleClick = () =>{
         console.log("niko");
     };
-    module.create  = () => {
+    module.create  = ({attrFor = ""}) => {
         module._style();
 
         return `
-            <label class="eye-collabcode" onClick="eyeCollabCode.handleClick()">Mostrar senha</label>
+            <label for="${attrFor}" class="eye-collabcode" onClick="eyeCollabCode.handleClick()">Mostrar senha</label>
         `
     }
 

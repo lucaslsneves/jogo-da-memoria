@@ -21,8 +21,8 @@ formLogin = (function(){
         const $emailInput = inputCollabCode.create({type:"email",placeholder:"example@email.com"});
 
         const $passwordLabel = labelCollabCode.create("Password");
-        const $passwordInput = inputCollabCode.create({type:"password",placeholder:"********"});
-        const $eyeCollabCode = eyeCollabCode.create();
+        const $passwordInput = inputCollabCode.create({id:"password",type:"password",placeholder:"********"});
+        const $eyeCollabCode = eyeCollabCode.create({attrFor:"password"});
 
         const $linkCollabCode = linkCollabCode.create({content:"Forgot password?"});
 
