@@ -1,4 +1,4 @@
-(function(){
+const signup = (function(){
     const $root = document.querySelector("#root")
     
     const $loginButton = flatButton.create("Login",false);
@@ -18,4 +18,4 @@
     $root.insertAdjacentHTML("beforeend",$formSignup);
     
    
-})();
+});
