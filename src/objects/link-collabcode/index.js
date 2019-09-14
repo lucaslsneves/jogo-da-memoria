@@ -9,13 +9,13 @@ const linkCollabCode = (function(){
             .link-collabcode{
                 display:block;
                 text-align:right;
-                margin-top:43px;
+                margin-top:40px;
                 text-decoration:none;
                 color:#3a4042;
-                opacity:0.5;
+                opacity:0.73;
             }
             .link-collabcode + .form-button{
-                margin-top:90px;
+                margin-top:60px;
             }
             
         `;
