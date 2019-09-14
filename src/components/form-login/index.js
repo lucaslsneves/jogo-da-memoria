@@ -26,7 +26,7 @@ formLogin = (function(){
 
         const $linkCollabCode = linkCollabCode.create({content:"Forgot password?"});
 
-        const $formButton = formButton.create("Login");
+        const $formButton = formButton.create({content:"Login",path:"game"});
        
         return`
             ${$emailLabel}

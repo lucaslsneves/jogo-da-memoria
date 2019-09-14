@@ -31,19 +31,21 @@ const flatButton = (function(){
 
            $head.insertBefore($style,null);
     };
-    
-    module.create = (content,active = false) => {
+    module.handleClick = path =>{
+        window.location.hash = `#/${path}`;
+    }
+    module.create = (content = "",active = false,path = "") => {
         module._id++; 
         module._style(active);
        
-       
             return`
-            <a href="" class="flat-button-${module._id}">${content}</a>
+            <a onClick="flatButton.handleClick('${path}')"class="flat-button-${module._id}">${content}</a>
         `;
         
     }
 
     return{
-        create:module.create
+        create:module.create,
+        handleClick:module.handleClick
     };
 })();

@@ -2,9 +2,12 @@
     const {hash} = window.location;
     const paths = [];
     paths[""] = login;
-    paths["#signup"] = signup; 
     
-    paths[hash]();
+    paths["#/login"] = login;
+    paths["#/signup"] = signup; 
+    paths["#/game"] = game;
+    
+    paths[hash](); 
 
    
     

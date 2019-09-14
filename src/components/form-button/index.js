@@ -26,12 +26,17 @@ const formButton = (function(){
 
         $head.insertBefore($style,null);
     }
+    module.handleClick = (event,path) =>{
+        event.preventDefault();
+        window.location.hash = `#/${path}`;
+    };
 
-    module.create = content =>{
+    module.create = ({content= "",path= ""}) =>{
         module._style();
-        return `<input class="form-button" type="submit" value="${content}" >`
+        return `<input onClick="formButton.handleClick(event,'${path}')"class="form-button" type="submit" value="${content}" >`
     }
     return{
-        create:module.create
+        create:module.create,
+        handleClick:module.handleClick
     }
 })();

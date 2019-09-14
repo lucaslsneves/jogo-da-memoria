@@ -30,8 +30,8 @@ const gameButton = (function(){
         `;
         $head.insertBefore($style,null);
     };
-    
-    module.create = content =>{
+  
+    module.create = (content= "",path ="") =>{
         module._style();
         return `
             <button class="game-button">${content}</button>
@@ -40,6 +40,6 @@ const gameButton = (function(){
 
     return{
         create:module.create,
-        handleClick:module.handleClick
+        
     };
 }());
