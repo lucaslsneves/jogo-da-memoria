@@ -13,6 +13,7 @@ const eyeCollabCode = (function(){
                 text-indent:-9999px;
                 background-repeat:no-repeat;
                 background-position:center;
+                cursor:pointer;
                 
             }
             
@@ -20,16 +21,19 @@ const eyeCollabCode = (function(){
 
         $head.insertBefore($style,null);
     }
-    
+    module.handleClick = () =>{
+        console.log("niko");
+    };
     module.create  = () => {
         module._style();
 
         return `
-            <label class="eye-collabcode">Mostrar senha</label>
+            <label class="eye-collabcode" onClick="eyeCollabCode.handleClick()">Mostrar senha</label>
         `
     }
 
     return{
-        create:module.create
+        create:module.create,
+        handleClick:module.handleClick
     }
 })();

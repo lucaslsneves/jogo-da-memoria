@@ -35,7 +35,6 @@ formLogin = (function(){
             ${$passwordInput}
             ${$eyeCollabCode}
             ${$linkCollabCode}
-            
             ${$formButton}
         `
     }
