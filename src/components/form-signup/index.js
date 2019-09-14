@@ -30,7 +30,7 @@ const formSignup = (function(){
     const $confirmPasswordLabel = labelCollabCode.create("Confirm Password");
     const $confirmPasswordInput = inputCollabCode.create({type:"password",placeholder:"********"});
     
-    const $formButton = formButton.craeate("Submit")
+    const $formButton = formButton.create("Submit")
     return `
         ${$userLabel}
         ${$userInput}

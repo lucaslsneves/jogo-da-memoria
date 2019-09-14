@@ -32,6 +32,6 @@ const formButton = (function(){
         return `<input class="form-button" type="submit" value="${content}" >`
     }
     return{
-        craeate:module.create
+        create:module.create
     }
 })();
