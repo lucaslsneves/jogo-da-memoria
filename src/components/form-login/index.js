@@ -22,14 +22,20 @@ formLogin = (function(){
 
         const $passwordLabel = labelCollabCode.create("Password");
         const $passwordInput = inputCollabCode.create({type:"password",placeholder:"********"});
+        const $eyeCollabCode = eyeCollabCode.create();
+
         const $linkCollabCode = linkCollabCode.create({content:"Forgot password?"});
+
         const $formButton = formButton.create("Login");
+       
         return`
             ${$emailLabel}
             ${$emailInput}
             ${$passwordLabel}
             ${$passwordInput}
+            ${$eyeCollabCode}
             ${$linkCollabCode}
+            
             ${$formButton}
         `
     }
