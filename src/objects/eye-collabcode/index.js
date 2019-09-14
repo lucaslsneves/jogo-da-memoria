@@ -21,14 +21,25 @@ const eyeCollabCode = (function(){
 
         $head.insertBefore($style,null);
     }
-    module.handleClick = () =>{
-        console.log("niko");
+    module.handleClick = function(){
+      const attrFor = this.getAttribute("for");
+      const $input = document.querySelector(`#${attrFor}`)
+      
+      console.log($input)
+      if($input.getAttribute("type") == "password"){
+        $input.setAttribute("type","text");
+      }else{
+          $input.setAttribute("type","password");
+      }
+      
+     
+     
     };
     module.create  = ({attrFor = ""}) => {
         module._style();
 
         return `
-            <label for="${attrFor}" class="eye-collabcode" onClick="eyeCollabCode.handleClick()">Mostrar senha</label>
+            <label for="${attrFor}" class="eye-collabcode" onClick="eyeCollabCode.handleClick.bind(this)()">Mostrar senha</label>
         `
     }
 
