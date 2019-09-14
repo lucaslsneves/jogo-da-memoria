@@ -8,8 +8,6 @@ const formSignup = (function(){
         $style.textContent = `
             .form-signup{
                 padding:0 35px 40px;
-               
-                
                 margin-top:30px;
 
             }
@@ -21,16 +19,16 @@ const formSignup = (function(){
     module._children = () => {
 
     const $userLabel = labelCollabCode.create("Username");
-    const $userInput = inputCollabCode.create("text","example"); 
+    const $userInput = inputCollabCode.create({type:"text",placeholder:"example"}); 
  
     const $emailLabel = labelCollabCode.create("E-mail");
-    const $emailInput = inputCollabCode.create("email","example@email.com");
+    const $emailInput = inputCollabCode.create({type:"email",placeholder:"example@email.com"});
  
     const $passwordLabel = labelCollabCode.create("Password");
-    const $passwordInput = inputCollabCode.create("password","********");
+    const $passwordInput = inputCollabCode.create({type:"password",placeholder:"********"});
  
     const $confirmPasswordLabel = labelCollabCode.create("Confirm Password");
-    const $confirmPasswordInput = inputCollabCode.create("password","********");
+    const $confirmPasswordInput = inputCollabCode.create({type:"password",placeholder:"********"});
     
     const $formButton = formButton.craeate("Submit")
     return `
