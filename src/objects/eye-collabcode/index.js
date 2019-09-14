@@ -14,7 +14,12 @@ const eyeCollabCode = (function(){
                 background-repeat:no-repeat;
                 background-position:center;
                 cursor:pointer;
-                
+                opacity:0.5;
+                margin-left:auto;
+                transform:translateY(-150%);
+            }
+            .eye-collabcode.-active{
+                opacity:1;
             }
             
         `;
@@ -23,12 +28,12 @@ const eyeCollabCode = (function(){
     }
     module.handleClick = function(){
       const attrFor = this.getAttribute("for");
-      const $input = document.querySelector(`#${attrFor}`)
-      
-      console.log($input)
+      const $input = document.querySelector(`#${attrFor}`);
       if($input.getAttribute("type") == "password"){
+          this.classList.add("-active");
         $input.setAttribute("type","text");
       }else{
+        this.classList.remove("-active");
           $input.setAttribute("type","password");
       }
       
