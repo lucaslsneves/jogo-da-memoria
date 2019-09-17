@@ -26,17 +26,36 @@ const formButton = (function(){
 
         $head.insertBefore($style,null);
     }
-    module.handleClick = (event,path) =>{
-        event.preventDefault();
-        if(path = "game"){
-            if(store.regexPasswordLogin){
+
+    module._createOutline = () =>{
+                 const $input = document.querySelector("#password");
+                $input.classList.add("-wrong");
+                setTimeout(()=>{
+                    $input.classList.remove("-wrong");
+                },2000);
+    }
+    module._checkPassword = path =>{
+        const $input = document.querySelector("#password");
+        if(path == "game"){
+            if($input.value.length >= 8){
                 window.location.hash = `#/${path}`;
                 location.reload(true);
-            }
+            }else{
+                module._createOutline();
+            }   
         }else{
             window.location.hash = `#/${path}`;
             location.reload(true);
         }
+    }
+
+    module.handleClick = (event,path) =>{
+        event.preventDefault();
+        
+        module._checkPassword(path);
+        
+          
+        
         
     };
 

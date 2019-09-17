@@ -9,7 +9,8 @@ module._style = () => {
   
   
      .point-bar{
-    
+        display:flex;
+        justify-content: space-between;
         height:40px;
         background-color:#3a4042;
         text-align:center;
@@ -32,11 +33,13 @@ module.create = () => {
         content:"Back",
         path:"login"
     });
+    const $stopWatch = stopWatch.create();
     module._style();
     return `
         <header class="point-bar">
             ${$backButton}
             <span class="number">0</span>
+            ${$stopWatch}
         </header>
     `;
 };

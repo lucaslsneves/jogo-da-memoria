@@ -18,41 +18,27 @@ const inputCollabCode = (function(){
               .input-collabcode + .label-collabcode {
                   margin-top:30px;
               }
+              #password.-wrong{
+                  outline:1.2px solid red;
+
+              }
            `;
 
            $head.insertBefore($style,null);
     };
 
-    module.onKeyPress = validation =>{
-        if(validation = ""){
-            return;
-        }else{
-         store.regexPasswordLogin =  module._passwordLoginValidation();
-        }
-        
-    }
-    module._passwordLoginValidation = () => {
-       
-        const $formLogin = document.querySelector(".form-login");
-        const $inputPassword = $formLogin.querySelectorAll(".input-collabcode");
-        if($inputPassword[1].value.length < 8){
-            console.log("Digite ao menos 8 caracteres!");
-            return false;
-        }
-        
-        return true;
-        
-    }
-    module.create = ({id = "",type = "text",placeholder = "",onKeyPress = ""}) =>{
+ 
+    
+    module.create = ({id = "",type = "text",placeholder = ""}) =>{
         module._style();
 
         
         return `
-            <input id="${id}"  onKeyPress="inputCollabCode.onKeyPress('${onKeyPress}')"  class="input-collabcode" type="${type}" placeholder="${placeholder}">
+            <input id="${id}"   class="input-collabcode" type="${type}" placeholder="${placeholder}">
         `
     }
     return{
-        create:module.create,
-        onKeyPress:module.onKeyPress
+        create:module.create
+        
     }
 })();

@@ -25,18 +25,22 @@ function createCardsWrapper(){
     }`;
     
     $head.insertAdjacentElement("beforeend",$style);
-
-    $cardsWrapper.addEventListener("click",() =>{
-        qtdActiveMemoryCard =$cardsWrapper.querySelectorAll(".memory-card.-active").length;
-        
+    
+    const _checkWin = () =>{
         score = $cardsWrapper.querySelectorAll(".memory-card.-score").length;
         if(score == 8){
-            const $root = document.querySelector("#root");
-            const $transparencyLayer = transparencyLayer.create();
-            const $winmsgWrapper = winmsgWrapper.create();
-            $root.insertAdjacentHTML("beforeend",$transparencyLayer);
-            $root.insertAdjacentHTML("beforeend",$winmsgWrapper);
+            _createLayerWin();
         }
+    }
+    const _createLayerWin = () =>{
+        const $root = document.querySelector("#root");
+        const $layerMsg = layerMsg.create("Win!");
+        $root.insertAdjacentHTML("beforeend",$layerMsg);
+    }
+    $cardsWrapper.addEventListener("click",() =>{
+        qtdActiveMemoryCard =$cardsWrapper.querySelectorAll(".memory-card.-active").length;
+        _checkWin()
+        
       
     });
     

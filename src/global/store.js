@@ -1,5 +1,6 @@
 
 const store = {
-    score:0,    
-    regexPasswordLogin:false
+    score:0,
+    time :10
+    
 };

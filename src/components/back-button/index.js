@@ -13,8 +13,6 @@ const backButton = (function(){
                padding:0 10px;
                letter-spacing:1px;
                color:inherit;
-               position:absolute;
-               left:0;
                 cursor:pointer;
                
          

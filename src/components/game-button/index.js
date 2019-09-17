@@ -31,6 +31,13 @@ const gameButton = (function(){
                 transform:translate(0);
                 position:static;
                 font-size:15px;
+                margin-right:20px;
+            }
+            .game-button.-exit{
+                transform:translate(0);
+                position:static;
+                font-size:15px;
+                background-color:tomato;
             }
         `;
         $head.insertBefore($style,null);
@@ -40,6 +47,8 @@ const gameButton = (function(){
             if(path){
                window.location.hash =`#/${path}`;
                 location.reload(true);
+            }else{
+                stopWatch.start();
             }
     }
     module.create = ({content= "",classe= "",path = ""}) =>{
