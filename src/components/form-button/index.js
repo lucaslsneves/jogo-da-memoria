@@ -28,8 +28,16 @@ const formButton = (function(){
     }
     module.handleClick = (event,path) =>{
         event.preventDefault();
-        window.location.hash = `#/${path}`;
-        location.reload(true);
+        if(path = "game"){
+            if(store.regexPasswordLogin){
+                window.location.hash = `#/${path}`;
+                location.reload(true);
+            }
+        }else{
+            window.location.hash = `#/${path}`;
+            location.reload(true);
+        }
+        
     };
 
     module.create = ({content= "",path= ""}) =>{

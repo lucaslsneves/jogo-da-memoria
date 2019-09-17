@@ -28,9 +28,14 @@ module._style = () => {
   $head.insertBefore($style,null);
 };
 module.create = () => {
+    const $backButton = backButton.create({
+        content:"Back",
+        path:"login"
+    });
     module._style();
     return `
         <header class="point-bar">
+            ${$backButton}
             <span class="number">0</span>
         </header>
     `;

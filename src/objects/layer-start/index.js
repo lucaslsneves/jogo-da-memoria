@@ -5,7 +5,7 @@ const layerStart = (function(){
     
     module.create = () =>{
         const $transparencyLayer = transparencyLayer.create();
-        const $gameButton = gameButton.create("Start");
+        const $gameButton = gameButton.create({content:"Start"});
                 
         return`
             <div class="layer-start" onClick="layerStart.handleClick(this)" onTransitionEnd="layerStart.handleTransitionEnd(event,this)">

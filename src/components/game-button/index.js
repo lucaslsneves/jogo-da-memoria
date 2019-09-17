@@ -27,19 +27,31 @@ const gameButton = (function(){
             .game-button.-disable{
                 opacity:0;
             }
+            .game-button.-again{
+                transform:translate(0);
+                position:static;
+                font-size:15px;
+            }
         `;
         $head.insertBefore($style,null);
     };
   
-    module.create = (content= "",path ="") =>{
+    module.handleClick = path =>{
+            if(path){
+               window.location.hash =`#/${path}`;
+                location.reload(true);
+            }
+    }
+    module.create = ({content= "",classe= "",path = ""}) =>{
         module._style();
         return `
-            <button class="game-button">${content}</button>
+            <button onClick="gameButton.handleClick('${path}')" class="game-button ${classe}">${content}</button>
         `;
     };
 
     return{
         create:module.create,
+        handleClick:module.handleClick
         
     };
 }());

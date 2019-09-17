@@ -1,5 +1,5 @@
 let qtdActiveMemoryCard = 0;
-
+let score = 0;
 function createCardsWrapper(){
   
     
@@ -28,7 +28,15 @@ function createCardsWrapper(){
 
     $cardsWrapper.addEventListener("click",() =>{
         qtdActiveMemoryCard =$cardsWrapper.querySelectorAll(".memory-card.-active").length;
-       
+        
+        score = $cardsWrapper.querySelectorAll(".memory-card.-score").length;
+        if(score == 8){
+            const $root = document.querySelector("#root");
+            const $transparencyLayer = transparencyLayer.create();
+            const $winmsgWrapper = winmsgWrapper.create();
+            $root.insertAdjacentHTML("beforeend",$transparencyLayer);
+            $root.insertAdjacentHTML("beforeend",$winmsgWrapper);
+        }
       
     });
     
