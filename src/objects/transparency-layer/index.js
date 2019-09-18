@@ -6,9 +6,12 @@ const transparencyLayer = (function(){
      const $head = document.querySelector("head");
 
      $style.textContent= `
+          
+          
             .transparency-layer {
                 background-color: rgba(58,64,66,0.5);
                 height:100vh;
+                min-height:710px;
                 width:100vw;
                 position:absolute;
                 top:0;
